@@ -142,13 +142,78 @@
         cursor: pointer;
         border-radius: 30px;
         transition: background-color 0.2s, color 0.2s;
+        color: white;
+        text-decoration: none;
+        
       }
       .submitted{
         font-weight: 600;
-        color: white
+        color: white;
       }
 
       .submit:hover {
         background-color: #ffffff;
         color: #FC7613 !important;
     }
+
+    .maincard1{
+        height: 420px;
+        width: 420px;
+        background: #1E252F;
+        border-radius: 25px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+    .top1{
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    .middle{
+        height: 10%;
+        width: 70%;
+    }
+    .bottom1{
+        height: 40%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .heading1{
+        font-size: 30px;
+        font-weight: 600;
+        color: white;
+        padding-bottom: 10px;
+      }
+      .body1{
+        line-height: 20px;
+        color: #767C88;
+        text-align: center;
+        line-height: 30px;
+      }
+    
+    .selected{
+        height: 40px;
+        width: 230px;
+        background: #2c3645;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* cursor: pointer; */
+        border-radius: 30px;
+    }
+    .submittedmessage{
+        font-weight: 600;
+        color: #FC7613;
+      }
+

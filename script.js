@@ -1,21 +1,32 @@
-// Get references to the elements
-const submitButton = document.querySelector('.submit');
-const circleCheckboxes = document.querySelectorAll('input[name="circle"]');
+// Get all the checkbox elements with name="circle"
+const checkboxes = document.querySelectorAll('input[name="circle"]');
 
-// Add a click event listener to the submit button
-submitButton.addEventListener("click", () => {
-  // Initialize a variable to count the number of selected circles
-  let numSelectedCircles = 0;
+// Function to count the selected checkboxes
+const countSelectedCheckboxes = () => {
+  // Initialize a variable to keep track of the number of selected checkboxes
+  let selectedCount = 0;
 
-  // Loop through the circle checkboxes to check which ones are selected
-  circleCheckboxes.forEach(checkbox => {
+  // Loop through all checkboxes and count the selected ones
+  checkboxes.forEach(checkbox => {
     if (checkbox.checked) {
-      numSelectedCircles++;
+      selectedCount++;
     }
   });
 
-  console.log('Number of selected circles:', numSelectedCircles);
+  return selectedCount;
+};
 
-  // Navigate to the "submitted.html" page with the selected number as a query parameter
-  window.location.href = `submitted.html?selected=${numSelectedCircles}`;
-});
+// Function to handle the "SUBMIT" button click
+const handleFormSubmit = () => {
+  // Get the number of selected checkboxes
+  const selectedCount = countSelectedCheckboxes();
+
+  // Redirect to submit.html with the selectedCount as a URL parameter
+  window.location.href = `submit.html?selectedCount=${selectedCount}`;
+};
+
+// Get the "SUBMIT" button element
+const submitButton = document.getElementById('submitButton');
+
+// Add an event listener to the "SUBMIT" button to detect clicks
+submitButton.addEventListener('click', handleFormSubmit);

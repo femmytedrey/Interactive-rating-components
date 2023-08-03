@@ -1,7 +1,7 @@
-// Extract the query parameter from the URL
+// Get the selectedCount from the URL parameter
 const urlParams = new URLSearchParams(window.location.search);
-const numSelectedCircles = urlParams.get('selected');
+const selectedCount = urlParams.get('selectedCount');
 
-// Display the message in the "submittedmessage" element
-const selectedMessageElement = document.querySelector('.submittedmessage');
-selectedMessageElement.textContent = `You selected ${numSelectedCircles} out of 5`;
+// Update the message with the correct selected count
+const selectedMessage = document.getElementById('selectedMessage');
+selectedMessage.textContent = `You selected ${selectedCount} out of 5`;
